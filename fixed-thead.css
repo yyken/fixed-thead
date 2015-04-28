@@ -1,0 +1,75 @@
+
+.fixed-table-container {
+    height: 98%; /*for pagenation*/
+    border: 1px solid #d4d4d4;
+    position: relative; /* could be absolute or relative */
+    padding: 60px 0 0 0; /* height of header */
+    overflow-x: hidden; /* for border */
+}
+
+.fixed-table-container-inner {
+    overflow-x: scroll;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.header-background {
+    background-color: #F3F3F3;
+    height: 60px; /* height of header */
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.th-inner {
+    position: absolute;
+    top: 0;
+    line-height: 30px; /* height of header */
+    text-align: left;
+    border: 1px solid #d4d4d4;
+    border-width: 0 0 0 1px;
+    padding: 0 4px;
+}
+
+@-moz-document url-prefix() {
+    .th-inner{
+    margin-left: -1px;
+    /*border-right: 1px solid #ddd;
+    border-left: none;*/
+}
+
+}
+
+.header-bottom .th-inner {
+    top: 30px;
+    line-height: 27px; /* height of header */
+    padding-bottom: 3px;
+}
+
+.th-inner input {
+    height: 27px;
+}
+
+.fixed-table-container td + td {
+    border-left: 1px solid #d4d4d4;
+}
+
+.fixed-table-container tbody th,
+.fixed-table-container tbody td {
+    padding: 4px;
+    word-wrap: break-word;
+    word-break: break-all;
+    word-break: break-word;
+}
+
+.fixed-table-container tbody > tr:nth-child(odd) > td,
+.fixed-table-container tbody > tr:nth-child(odd) > th {
+    background-color: #E0F0FF;
+}
+
+
+.fixed-table-container tbody > tr:last-child {
+    border-bottom: 1px solid #d4d4d4;
+}

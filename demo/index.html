@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Angular-scrollable-table directive demo</title>
+
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href='../fixed-thead.css' rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="http://code.angularjs.org/1.3.15/angular.js"></script>
+  <script src="smart-table.js"></script>
+  <script type="text/javascript" src="../fixed-thead.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</head>
+
+<body ng-controller="mainCtrl">
+  <div class="container-fluid">
+    <div class="row" style="padding:30px;">
+      <div class="col-md-12" style="width:80%;height:500px;" st-table="rowCollection">
+
+        <table fixed-thead >
+          <thead>
+            <tr class="header-top">
+              <th><div st-sort="firstName">first name</div></th>
+              <th st-sort="lastName">last name</th>
+              <th st-sort="age">age</th>
+              <th st-sort="email">email</th>
+              <th st-sort="balance">balance</th>
+            </tr>
+            <tr class="header-bottom">
+             <th>
+               <input st-search="'firstName'" class="form-control" type="search" />
+             </th>
+             <th>
+               <input st-search="'lastName'" class="form-control" type="search" />
+             </th>
+             <th>
+               <input st-search="'age'" class="form-control" type="search" />
+             </th>
+             <th>
+               <input st-search="'email'" class="form-control" type="search" />
+             </th>
+             <th>
+               <input st-search="'balance'" class="form-control" type="search" />
+             </th>
+           </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="row in rowCollection">
+              <td>{{row.firstName}}</td>
+              <td>{{row.lastName | uppercase}}</td>
+              <td>{{row.age}}</td>
+              <td>{{row.email}}</td>
+              <td>{{row.balance | currency}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
